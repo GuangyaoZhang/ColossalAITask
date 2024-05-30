@@ -10,7 +10,7 @@ torchrun --nnode 2  --node_rank=1  --master-addr 172.27.183.198  --master-port 5
 单机器：
 
 torchrun  --nproc_per_node 8 dist_bandwidth.py
-## 任务结果
+## 任务结果(GB/s)
 
 
 | 指标      |    2卡 | 4卡  |8卡  | 2机器*4卡 |2机器*8卡|
