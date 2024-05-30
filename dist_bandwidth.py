@@ -1,11 +1,12 @@
 import torch.distributed as dist
 import torch
+import os
 
 def setup():
 
     dist.init_process_group(backend="nccl")
-    rank = dist.get_rank()
-    torch.cuda.set_device(rank)
+    local_rank = int(os.environ['LOCAL_RANK'])
+    torch.cuda.set_device(local_rank)
 
 
 def prepare_all_to_all(size = 16384):
